@@ -23,5 +23,7 @@ export const emptyBox = () => ({
 
 // export const REMOVE_DRINK = 'REMOVE_DRINK';
 // export const removeDrink = drinkArray => {
- 
+//   const newDrinks = drinkArray.filter(drink => {})
+//   type: REMOVE_DRINK,
+//   payload: newDrinks
 // };

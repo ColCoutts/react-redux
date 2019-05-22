@@ -8,7 +8,6 @@ import {
   addSandwich,
   emptyBox } from './lunchActions';
 
-
 describe('lunchbox actions', () => {
   it('tests our action creators', () => {
     expect(addDrink('water')).toEqual({ type: ADD_DRINK, payload: 'water' });
