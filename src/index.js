@@ -1,8 +1,15 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
+import { createStore } from 'redux';
 
-render(
-  <App />,
-  document.getElementById('root')
-);
+const initialState = {
+  id: null,
+  body: null
+};
+
+function reducer(state = initialState, action) {
+  switch(action.type) {
+    
+  }
+}
+
+
+const store = createStore();
