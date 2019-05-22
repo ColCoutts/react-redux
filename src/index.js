@@ -1,8 +1,57 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
+import { createStore } from 'redux';
 
-render(
-  <App />,
-  document.getElementById('root')
-);
+
+const initialState = {
+  drink: null,
+  chips: null,
+  sandwich: null
+};
+
+function reducer(state = initialState, action) {
+  switch(action.type) {
+    case 'ADD_DRINK':
+      return { ...state, drink: action.payload };
+    case 'ADD_CHIPS':
+      return { ...state, chips: action.payload };
+    case 'ADD_SANDWICH':
+      return { ...state, sandwich: action.payload };
+    case 'EMPTY_BOX':
+      return initialState;
+    case 'DRINK_ARRAY':
+      return { ...state, drink: [...action.payload] };
+    default: 
+      return state;
+    
+  }
+}
+
+const store = createStore(reducer);
+
+store.dispatch({
+  type: 'ADD_DRINK',
+  payload: 'soda-pop'
+});
+
+store.dispatch({
+  type: 'ADD_CHIPS',
+  payload: 'Utz'
+});
+
+store.dispatch({
+  type: 'ADD_SANDWICH',
+  payload: 'PB&J'
+});
+
+store.dispatch({
+  type: 'EMPTY_BOX'
+});
+
+store.dispatch({
+  type: 'DRINK_ARRAY',
+  payload: ['milk', 'cranberry juice']
+});
+
+
+
+
+console.log(store.getState());
