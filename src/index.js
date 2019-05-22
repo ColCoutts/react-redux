@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 
 const initialState = {
-  drink: null,
+  drink: [],
   chips: null,
   sandwich: null
 };
@@ -18,7 +18,7 @@ function reducer(state = initialState, action) {
     case 'EMPTY_BOX':
       return initialState;
     case 'DRINK_ARRAY':
-      return { ...state, drink: [...action.payload] };
+      return { ...state, drink: [...state.drink, action.payload] };
     default: 
       return state;
     
@@ -48,7 +48,17 @@ store.dispatch({
 
 store.dispatch({
   type: 'DRINK_ARRAY',
-  payload: ['milk', 'cranberry juice']
+  payload: 'milk'
+});
+
+store.dispatch({
+  type: 'DRINK_ARRAY',
+  payload: 'juice'
+});
+
+store.dispatch({
+  type: 'DRINK_ARRAY',
+  payload: 'Mallorts'
 });
 
 
