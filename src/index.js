@@ -3,18 +3,18 @@ import { createStore } from 'redux';
 
 const initialState = {
   drink: [],
-  chips: null,
-  sandwich: null
+  chips: [],
+  sandwich: []
 };
 
 function reducer(state = initialState, action) {
   switch(action.type) {
     case 'ADD_DRINK':
-      return { ...state, drink: action.payload };
+      return { ...state, drink: [...state.drink, action.payload] };
     case 'ADD_CHIPS':
-      return { ...state, chips: action.payload };
+      return { ...state, chips: [...state.chips, action.payload] };
     case 'ADD_SANDWICH':
-      return { ...state, sandwich: action.payload };
+      return { ...state, sandwich: [...state.sandwich, action.payload] };
     case 'EMPTY_BOX':
       return initialState;
     case 'DRINK_ARRAY':
@@ -42,9 +42,9 @@ store.dispatch({
   payload: 'PB&J'
 });
 
-store.dispatch({
-  type: 'EMPTY_BOX'
-});
+// store.dispatch({
+//   type: 'EMPTY_BOX'
+// });
 
 store.dispatch({
   type: 'DRINK_ARRAY',
