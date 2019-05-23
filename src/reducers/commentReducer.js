@@ -19,7 +19,8 @@ export default function reducer(state = {}, action) {
       return {
         ...state,
         [action.payload.postId]: [
-          action.payload
+          ...(state[action.payload.postId] || []),
+          action.payload.comment
         ]
       };
     
