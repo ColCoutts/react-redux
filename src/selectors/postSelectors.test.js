@@ -18,4 +18,17 @@ describe('post selectors', () => {
       ]
     );
   });
+
+  it('get a post by id', () => {
+    const state = {
+      posts: [
+        { title: 'yes', body: 'goodbye' },
+        { title: 'no', body: 'hello' },
+      ]
+    };
+
+    expect(getPost(state, 0)).toEqual(
+      { id: 0, title: 'yes', body: 'goodbye' }
+    );
+  });
 });
