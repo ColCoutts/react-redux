@@ -1,5 +1,5 @@
-import reducer from './postReducer';
-import { createComment, deleteComment } from '../actions/commentActions';
+import reducer from './commentReducer';
+import { createComment } from '../actions/commentActions';
 
 describe('comment reducer tests', () => {
   it('handles createCommment action', () => {
