@@ -9,7 +9,7 @@ import { createStore } from 'redux';
 
 const store = createStore(reducer);
 
-store.dispatch(addPost('hi im colin'));
+// store.dispatch(addPost({ title: 'colin', body: 'hi im colin' }));
 store.dispatch(removePost());
 
 console.log(store.getState());
