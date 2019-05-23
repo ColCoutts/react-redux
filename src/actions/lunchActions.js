@@ -16,11 +16,6 @@ export const addSandwich = sandwich => ({
   payload: sandwich
 });
 
-export const EMPTY_BOX = 'EMPTY_BOX';
-export const emptyBox = () => ({
-  type: EMPTY_BOX
-});
-
 export const REMOVE_DRINK = 'REMOVE_DRINK';
 export const removeDrink = () => ({
   type: REMOVE_DRINK
