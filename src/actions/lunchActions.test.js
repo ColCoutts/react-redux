@@ -2,11 +2,15 @@ import {
   ADD_CHIPS,
   ADD_DRINK,
   ADD_SANDWICH,
-  EMPTY_BOX,
   addDrink,
   addChips,
-  addSandwich,
-  emptyBox } from './lunchActions';
+  addSandwich
+} from './lunchActions';
+
+import {
+  EMPTY_BOX,
+  emptyBox
+} from './removeActions';
 
 describe('lunchbox actions', () => {
   it('tests our action creators', () => {
