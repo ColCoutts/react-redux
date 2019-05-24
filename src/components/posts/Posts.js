@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Post from './Post';
 
-function Posts({ posts }) {
-  const postArray = posts.map(post => {
-    <li>
-      <Post post={post} />
-    </li>;
-  });
+function Posts({ posts, removePost }) {
+  const postArray = posts.map(post => (
+    <li key={post.id}>
+      <Post removePost={removePost} post={post} />
+    </li>
+  ));
 
   return (
     <ul>
@@ -17,6 +17,7 @@ function Posts({ posts }) {
 }
 
 Posts.propTypes = {
+  removePost: PropTypes.func.isRequired,
   posts: PropTypes.array.isRequired
 };
 

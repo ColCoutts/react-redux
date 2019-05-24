@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  deletePost(id) {
+  removePost(id) {
     dispatch(removePost(id));
   }
 });

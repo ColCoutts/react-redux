@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default class CommentForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired
-  };
+  }
 
   state = {
     comment: ''
@@ -26,7 +26,7 @@ export default class CommentForm extends PureComponent {
     const { comment } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <textarea value={comment} onChange={this.updateComment} ></textarea>
+        <textarea value={comment} onChange={this.updateComment}></textarea>
         <button>SUBMIT</button>
       </form>
     );

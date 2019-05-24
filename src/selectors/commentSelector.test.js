@@ -7,7 +7,6 @@ describe('comment selectors', () => {
         3: ['hi', 'there']
       }
     };
-
     expect(getComments(state, 3)).toEqual(['hi', 'there']);
   });
 });
