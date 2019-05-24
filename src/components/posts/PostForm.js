@@ -24,7 +24,7 @@ export default class PostForm extends PureComponent {
   }
 
   handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value })
+    this.setState({ [target.name]: target.value });
   }
 
   render() {
