@@ -5,9 +5,14 @@ import React from 'react';
 //   Route,
 //   Link
 // } from 'react-router-dom';
+import AllPosts from '../containers/posts/AllPosts';
+import CreatePost from '../containers/posts/CreatePost';
 
 export default function App() {
   return (
-    <h1>hello</h1>
+    <>
+      <AllPosts />
+      <CreatePost />
+    </>
   );
 }
