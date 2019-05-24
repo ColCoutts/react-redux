@@ -5,7 +5,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 function Comment({ id, comment, deleteComment }) {
   return (
     <section>
-      <p>{comment}</p>
+      <p>{comment.comment}</p>
       <FaTrashAlt onClick={deleteComment.bind(null, id)} />
     </section>
   );
@@ -13,7 +13,7 @@ function Comment({ id, comment, deleteComment }) {
 
 Comment.propTypes = {
   id: PropTypes.number.isRequired,
-  comment: PropTypes.string.isRequired,
+  comment: PropTypes.object.isRequired,
   deleteComment: PropTypes.func.isRequired
 };
 
