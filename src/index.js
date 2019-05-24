@@ -1,8 +1,15 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
+import {
+  addPost,
+  removePost
+} from './actions/postActions';
 
-render(
-  <App />,
-  document.getElementById('root')
-);
+import reducer from './reducers';
+
+import { createStore } from 'redux';
+
+const store = createStore(reducer);
+
+// store.dispatch(addPost({ title: 'colin', body: 'hi im colin' }));
+store.dispatch(removePost());
+
+console.log(store.getState());
