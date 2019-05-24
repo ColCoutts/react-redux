@@ -8,7 +8,6 @@ import {
 import Home from './Home';
 import PostById from '../containers/posts/PostById';
 
-
 export default function App() {
   return (
     <Router>
