@@ -1,22 +1,12 @@
-import {
-  addPost,
-  removePost
-} from './actions/postActions';
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import App from '../src/components/App';
 
-import {
-  createComment
-} from './actions/commentActions';
-
-import reducer from './reducers';
-import { createStore } from 'redux';
-
-const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+render(
+  <Provider store={store} >
+    <App />
+  </Provider>,
+  document.getElementById('root')
 );
-
-// store.dispatch(removePost());
-store.dispatch(addPost('colin', 'hi im colin'));
-store.dispatch(createComment(0, 'hi im a post'));
-
-console.log(store.getState());
